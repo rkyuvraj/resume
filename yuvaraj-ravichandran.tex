@@ -1,38 +1,23 @@
-\documentclass[letterpaper,11pt]{article}
+\documentclass[11pt, a4paper]{article}
 
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
-
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
 \usepackage{titlesec}
-\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{helvet}
+\usepackage{fontawesome}
+
 \input{glyphtounicode}
 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-
+\pagestyle{empty}
 \urlstyle{same}
 
 \raggedbottom
 \raggedright
+
 \setlength{\tabcolsep}{0in}
 
 % Sections formatting
@@ -45,6 +30,8 @@
 
 %-------------------------
 % Custom commands
+\renewcommand{\familydefault}{\sfdefault}
+
 \newcommand{\resumeItem}[1]{
   \item\small{
     % \textbf{#1}{: #2 \vspace{-2pt}}
@@ -60,12 +47,13 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubheading}[4]{
+\newcommand{\resumeSubheading}[3]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+      \textbf{#1} & \textbf{#3} \\
+    \end{tabular*}
+    \textit{\small#2}
+    \vspace{-5pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
@@ -83,128 +71,124 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-%-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom commands for contact info
+\newcommand{\contactInfo}[3]{
+    \centerline{
+        \faEnvelope\ #1 \textbar{} 
+        \faPhone\ #2 \textbar{}
+        \faLinkedin\ #3
+    }
+    \vspace{1em}
+}
 
+\newcommand{\summary}[1]{
+    {\par\small\setlength{\parindent}{0pt}#1\par}
+}
 
 \begin{document}
 
 %----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{https://www.linkedin.com/in/yuvarajravichandran}{\Large Yuvaraj Ravichandran}} & Email : \href{mailto:\email}{\email}\\
-  \href{https://www.linkedin.com/in/yuvarajravichandran}{www.linkedin.com/in/yuvarajravichandran} & Mobile : \href{tel:\mobile}{\mobile} \\
-\end{tabular*}
+\begin{center}
+  {\Huge\bfseries Yuvaraj Ravichandran}
+\end{center}
+
+\contactInfo{\href{mailto:\email}{\email}}{\mobile}{\href{https://www.linkedin.com/in/yuvarajravichandran}{yuvarajravichandran}}
+
+% --------PROFESSIONAL SUMMARY------------
+\section{Professional Summary}
+\summary{Self driven Software engineer with over 12 years of building fast, reliable financial systems that handle billions of transactions every day. I design and develop high-performance reconciliation engines and real-time data processing systems, with a focus on getting the fundamentals right. I tackle complex performance bottlenecks by breaking them down systematically - this approach has helped me build systems that process massive financial datasets in minutes instead of hours. Strong background in Java ecosystem, particularly in stream processing. I enjoy solving tough technical problems and helping other engineers grow through mentoring and knowledge sharing.}
 
 % --------PROGRAMMING SKILLS------------
 \section{Programming Skills}
- \resumeSubHeadingListStart
-   \item{
-     \textbf{Languages}{: Java, Javascript}
-   }
-   \item{
-    \textbf{Technologies}{: Spring, Apache Storm, Apache Cassandra, Apache Kafka, Elastic Stack (ELK), RocksDB, TeamCity, IBM UrbanCode Deploy, MSSQL, Oracle, HTML/CSS}
-  }
+  \resumeSubHeadingListStart
+    \item{
+      \textbf{Languages:} Java, JavaScript, Python
+    }
+    \item{
+      \textbf{Frameworks \& Technologies:} Spring, Angular, Microservices
+    }
+    \item{
+      \textbf{Databases \& Storage:} MSSQL, Oracle, RocksDB, Apache Cassandra, ElasticSearch Stack (ELK), Hazelcast, Apache Ignite
+    }
+    \item{
+      \textbf{BigData \& Streaming:} Apache Storm, Apache Kafka, Lambda Architecture
+    }
+    \item{
+      \textbf{DevOps \& Tools:} TeamCity, IBM UrbanCode Deploy, Git
+    }
  \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
   \resumeSubHeadingListStart
-
     \resumeSubheading
-      {Barclays Global Service Centre Pvt. Ltd.}{Chennai, Tamilnadu, India}
+      {Barclays Global Service Centre Pvt. Ltd., Chennai}
       {AVP}{Feb 2020 - Mar 2024}
       \resumeItemListStart
         \resumeItem
-          {Built a high performance in house reconciliation product from scratch in a fast paced environment. I have handled design and architecture of core components including in-memory matching engine, ETL layer to name a few. Due to low latency, we were able to reduce the runtime of existing high volume reconciliations, which were running on market leading legacy systems, from hours to mins. This helps the bank greatly to find and mitigate risks faster. And this is considered as a strategic tool to replace existing licensed ones across the bank}
+          {Architected and delivered a high-performance in-house reconciliation platform that processes billions of records, reducing runtime from hours to minutes through innovative in-memory matching engine design}
         \resumeItem
-          {Managed a team of 8 engineers including vendors with focus on high quality deliveries on time. I have involved in task assignments, design discussion and mentoring them on implementation specifics}
+          {Designed and implemented a comprehensive break management system with multiple components including proofing, carry over, duplicate check, and reporting capabilities}
         \resumeItem
-          {Volunteered on tech debt mitigation program which was aimed to migrate legacy systems to latest version of Java and completed them successfully. This was considered as one of the great achievement due to low to no knowledge about those systems existed in our team}
+          {Designed and implemented reference data cache using RocksDB which was used by multiple reconciliation processes as an embedded cache for data enrichment. Later we have migrated the cache to Apache Ignite for better scalability}
         \resumeItem
-          {I have involved in Flash EOL mitigation for few of our legacy systems, where we successfully migrated the frontend to Angular along with their services to Spring based REST APIs within short span of time}
+          {Led and mentored a cross-functional team of 8 engineers, driving high-quality deliverables and maintaining aggressive timelines}
         \resumeItem
-          {Designed and developed in house break management system to manage results of our reconciliations. This involves various sub-components like proofing, carry over, duplicate check, reporting, static data management etc. I have involved in designing database layer for day 1 architecture}
+          {Spearheaded successful migration of multiple legacy systems from Java 1.6 to 11, despite minimal existing documentation, significantly reducing technical debt}
         \resumeItem
-          {I have been part of implementing git workflow, CI/CD pipelines, and setting up internal artifact repository}
-        
+          {Led Flash EOL migration initiative, successfully transitioning legacy frontend systems to Angular and implementing Spring-based REST APIs}
+        \resumeItem
+          {Established robust development practices by implementing git workflow, CI/CD pipelines, and internal artifact repository}
       \resumeItemListEnd
       
-% --------Multiple Positions Heading------------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
-
     \resumeSubheading
-      {Citicorp Services India Pvt. Ltd.}{Chennai, Tamilnadu, India}
+      {Citicorp Services India Pvt. Ltd., Chennai}
       {Application Developer Intermediate Programmer Analyst}{Oct 2016 - Feb 2020}
       \resumeItemListStart
         \resumeItem
-          {Developed real-time reconciliation data processing system using Lambda architecture to crunch billions of records}
+          {Engineered a real-time reconciliation system using Lambda architecture, capable of processing billions of records with high throughput}
         \resumeItem
-          {Redesigned matching layer to achieve 12k messages/sec with sub milli second latency using space based architecture using distributed data grid like Hazelcast}
+          {Optimized matching layer architecture achieving 12,000 messages/second with sub-millisecond latency using Hazelcast distributed grid}
         \resumeItem
-          {Migrated the transformation layer from batch to streaming platform (Storm/Kafka) to provide 6X performance}
+          {Enhanced system performance by 6X through migration from batch to streaming architecture using Storm/Kafka}
         \resumeItem
-          {I have been part of design and development of real-time break management system using Elastic stack to reduce report timing from minutes to seconds}
+          {Implemented real-time break management system using Elastic stack, reducing report generation time from minutes to seconds}
         \resumeItem
-          {Designed and Implemented the initial version of CI/CD pipeline using TeamCity and Urbancode Deploy}
+          {Designed and deployed initial CI/CD pipeline using TeamCity and Urbancode Deploy}
         \resumeItem
-          {I have been part of setting up infrastructure for Kafka, Storm and ELK clusters on bare metal VMs}
+          {Set up and managed infrastructure for Kafka, Storm, and ELK clusters on bare metal VMs}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Infrasoft Technologies Ltd. (Client - BNP Paribas Securities Ltd.)}{Chennai, Tamilnadu, India}
+      {Infrasoft Technologies Ltd. (Client-BNP Paribas), Chennai}
       {Senior Associate Consultant}{Sep 2015 - Oct 2016}
       \resumeItemListStart
         \resumeItem
-          {Implemented multiple new features to collect and process SWIFT messages from multiple sources every day}
+          {Developed and enhanced SWIFT message processing system handling multiple source integrations}
         \resumeItem
-          {Helped the team to identify and fix critical bugs in Corporate action straight through processes}
+          {Resolved critical bugs in Corporate action straight-through processing, improving system reliability}
+        \resumeItem
+          {Collaborated with cross-functional teams to ensure seamless integration of new features}
       \resumeItemListEnd
 
     \resumeSubheading
-      {BNY Mellon Technology Pvt. Ltd. (Inautix)}{Chennai, Tamilnadu, India}
+      {BNY Mellon Technology Pvt. Ltd. (Inautix), Chennai}
       {Senior Application Developer}{Aug 2011 - Sep 2015}
       \resumeItemListStart
         \resumeItem
-          {Developed template configuration management system to ease the initial account setup process}
+          {Developed template configuration management system streamlining account setup processes}
         \resumeItem
-          {Lead the integration of Advisor model management system with New account opening using RESTful webservices}
+          {Led integration of Advisor model management system with account opening platform using RESTful services}
         \resumeItem
-          {Fixed some of the performance bottlenecks with the help of Dynatrace reports}
+          {Optimized system performance through analysis of Dynatrace reports and implementation of solutions}
         \resumeItem
-          {I have been part of many production deployment and L3 support for New account opening system}
+          {Provided L3 support and managed production deployments for New account opening system}
       \resumeItemListEnd
-
   \resumeSubHeadingListEnd
-
-
-%-----------PROJECTS-----------------
-% \section{Projects}
-%   \resumeSubHeadingListStart
-%     \resumeSubItem{QuantSoftware Toolkit}
-%       {Open source python library for financial data analysis and machine learning for finance.}
-%     \resumeSubItem{Github Visualization}
-%       {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-%     \resumeSubItem{Recommendation System}
-%       {Music and Movie recommender systems using collaborative filtering on public datasets.}
-%     \resumeSubItem{Mac Setup}
-%       {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-%   \resumeSubHeadingListEnd
-
 
 %-----------EDUCATION-----------------
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Sona College of Technology}{Salem, Tamilnadu, India}      
-      {Bachelor of Electrical and Electronics Engineering with 8.77 CGPA}{2007 - 2011}
-  \resumeSubHeadingListEnd
+  \textbf{Sona College of Technology, Salem} \hfill \textbf{2007 - 2011} \\
+  Bachelor of Electrical and Electronics Engineering \textbar{} CGPA: 8.77
 
-%-------------------------------------------
 \end{document}
