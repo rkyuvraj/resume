@@ -7,7 +7,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{helvet}
+\usepackage[sfdefault]{roboto}
 \usepackage{fontawesome}
 
 \input{glyphtounicode}
@@ -30,8 +30,6 @@
 
 %-------------------------
 % Custom commands
-\renewcommand{\familydefault}{\sfdefault}
-
 \newcommand{\resumeItem}[1]{
   \item\small{
     % \textbf{#1}{: #2 \vspace{-2pt}}
@@ -74,8 +72,8 @@
 % Custom commands for contact info
 \newcommand{\contactInfo}[3]{
     \centerline{
-        \faEnvelope\ #1 \textbar{} 
-        \faPhone\ #2 \textbar{}
+        \faEnvelope\ #1 \quad
+        \faPhone\ #2 \quad
         \faLinkedin\ #3
     }
     \vspace{1em}
@@ -96,16 +94,16 @@
 
 % --------PROFESSIONAL SUMMARY------------
 \section{Professional Summary}
-\summary{Self driven Software engineer with over 12 years of building fast, reliable financial systems that handle billions of transactions every day. I design and develop high-performance reconciliation engines and real-time data processing systems, with a focus on getting the fundamentals right. I tackle complex performance bottlenecks by breaking them down systematically - this approach has helped me build systems that process massive financial datasets in minutes instead of hours. Strong background in Java ecosystem, particularly in stream processing. I enjoy solving tough technical problems and helping other engineers grow through mentoring and knowledge sharing.}
+\summary{Highly skilled and self-driven software engineer with 12+ years of experience in designing, developing, and delivering high-performance financial systems. Key achievements include building a real-time reconciliation platform for event-based trades and a high-performance batch reconciliation platform that processes billions of transactions daily. With exceptional problem-solving skills, I excel as an individual contributor, debugging complex systems and resolving critical issues. Passionate about applying pragmatic and first-principles thinking to develop innovative solutions that drive business value. Strong expertise in the Java ecosystem and distributed stream processing.}
 
 % --------PROGRAMMING SKILLS------------
 \section{Programming Skills}
   \resumeSubHeadingListStart
     \item{
-      \textbf{Languages:} Java, JavaScript, Python
+      \textbf{Languages:} Java, JavaScript, Python, SQL
     }
     \item{
-      \textbf{Frameworks \& Technologies:} Spring, Angular, Microservices
+      \textbf{Frameworks \& Technologies:} Spring Boot, Angular, Microservices, RESTful
     }
     \item{
       \textbf{Databases \& Storage:} MSSQL, Oracle, RocksDB, Apache Cassandra, ElasticSearch Stack (ELK), Hazelcast, Apache Ignite
@@ -114,7 +112,7 @@
       \textbf{BigData \& Streaming:} Apache Storm, Apache Kafka, Lambda Architecture
     }
     \item{
-      \textbf{DevOps \& Tools:} TeamCity, IBM UrbanCode Deploy, Git
+      \textbf{DevOps \& Tools:} TeamCity, IBM UrbanCode Deploy, Git, Docker
     }
  \resumeSubHeadingListEnd
 
@@ -126,11 +124,13 @@
       {AVP}{Feb 2020 - Mar 2024}
       \resumeItemListStart
         \resumeItem
-          {Architected and delivered a high-performance in-house reconciliation platform that processes billions of records, reducing runtime from hours to minutes through innovative in-memory matching engine design}
+          {Architected and delivered a high-performance in-house reconciliation platform from scratch that processes billions of records, reducing runtime from hours to minutes through innovative in-memory matching engine design}
         \resumeItem
           {Designed and implemented a comprehensive break management system with multiple components including proofing, carry over, duplicate check, and reporting capabilities}
         \resumeItem
-          {Designed and implemented reference data cache using RocksDB which was used by multiple reconciliation processes as an embedded cache for data enrichment. Later we have migrated the cache to Apache Ignite for better scalability}
+          {Designed and implemented a high-performance reference data cache using RocksDB, which served as a centralized data store for multiple
+          reconciliation processes, enhancing data enrichment capabilities. To further optimize system scalability, the cache was successfully
+          migrated to Apache Ignite.}
         \resumeItem
           {Led and mentored a cross-functional team of 8 engineers, driving high-quality deliverables and maintaining aggressive timelines}
         \resumeItem
@@ -148,9 +148,9 @@
         \resumeItem
           {Engineered a real-time reconciliation system using Lambda architecture, capable of processing billions of records with high throughput}
         \resumeItem
-          {Optimized matching layer architecture achieving 12,000 messages/second with sub-millisecond latency using Hazelcast distributed grid}
+          {Optimized matching layer architecture achieving 12,000 messages/second with sub-millisecond latency using Hazelcast distributed cache}
         \resumeItem
-          {Enhanced system performance by 6X through migration from batch to streaming architecture using Storm/Kafka}
+          {Enhanced performance of data transformation by 6X through migration from batch to streaming architecture using Storm/Kafka}
         \resumeItem
           {Implemented real-time break management system using Elastic stack, reducing report generation time from minutes to seconds}
         \resumeItem
